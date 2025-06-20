@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>OTP Verification - Delhi Public School</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 40px;
+    }
+
+    .container {
+      border: 1px solid #ccc;
+      max-width: 500px;
+      margin: auto;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    h2 {
+      margin-bottom: 5px;
+    }
+
+    input {
+      display: block;
+      margin: 10px auto;
+      padding: 10px;
+      width: 80%;
+      border: 1px solid #999;
+      border-radius: 5px;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin: 10px;
+      border: none;
+      border-radius: 5px;
+      background-color: blue;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .resend {
+      color: blue;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    .info-box {
+      border: 1px solid #aaa;
+      margin-top: 20px;
+      padding: 10px;
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 14px;
+    }
+
+    #resendBtn {
+      color: gray;
+      pointer-events: none;
+    }
+
+    .green {
+      color: green;
+    }
+
+    .red {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <img src="\\18056564_1893183020894119_9109696395635491203_o.jpg" width="80" alt="DPS Logo">
+    <h2>Delhi Public School</h2>
+    <p>Nyati Estate Rd, Nyati County, Mohammed Wadi, Pune, Autadwadi Handewadi,<br>Maharashtra 411060</p>
+
+    <input type="text" id="mobile" placeholder="Enter Your Mobile No">
+    <button onclick="generateOTP()">Generate OTP</button>
+
+    <input type="text" id="otp" placeholder="Enter OTP">
+    <button onclick="validateOTP()">Validate OTP</button>
+
+    <p id="resendBtn" class="resend" onclick="resendOTP()">RESEND OTP</p>
+    <a href="#">Not Registered</a>
+
+    <div class="info-box">
+      If Generate OTP pressed then show the timer of 45 sec.<br>
+      Once 45 sec is over then show “Resend OTP” in Green color.<br>
+      Once user pressed Resend OTP then change the color to Red Color & timer of 45 sec started.<br>
+      Max 03 times Resend OTP can be pressed
+    </div>
+  </div>
+
+  <script>
+    let resendCount = 0;
+    let timer;
+    let timeLeft = 45;
+
+    function generateOTP() {
+      document.getElementById("resendBtn").innerText = "Wait 45 seconds...";
+      document.getElementById("resendBtn").className = "resend";
+      document.getElementById("resendBtn").style.pointerEvents = "none";
+      timeLeft = 45;
+      startTimer();
+    }
+
+    function startTimer() {
+      clearInterval(timer);
+      timer = setInterval(() => {
+        if (timeLeft <= 0) {
+          clearInterval(timer);
+          document.getElementById("resendBtn").innerText = "RESEND OTP";
+          document.getElementById("resendBtn").className = "resend green";
+          document.getElementById("resendBtn").style.pointerEvents = "auto";
+        } else {
+          document.getElementById("resendBtn").innerText = `Wait ${timeLeft--} seconds...`;
+        }
+      }, 1000);
+    }
+
+    function resendOTP() {
+      if (resendCount < 3) {
+        resendCount++;
+        document.getElementById("resendBtn").className = "resend red";
+        document.getElementById("resendBtn").style.pointerEvents = "none";
+        timeLeft = 45;
+        startTimer();
+      } else {
+        document.getElementById("resendBtn").innerText = "Max limit reached";
+        document.getElementById("resendBtn").style.pointerEvents = "none";
+      }
+    }
+
+    function validateOTP() {
+      alert("OTP Validated (Demo Function)");
+    }
+  </script>
+
+</body>
+</html>

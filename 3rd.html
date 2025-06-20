@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fill Details - DPS</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+      border: 1px solid #ccc;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .logo {
+      width: 80px;
+    }
+
+    h2 {
+      margin-bottom: 0;
+    }
+
+    .btn-main {
+      background-color: #d4aa00;
+      color: white;
+      padding: 10px 30px;
+      font-size: 18px;
+      border: none;
+      border-radius: 5px;
+      margin: 10px auto;
+    }
+
+    .tab-buttons {
+      margin: 20px auto;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .tab-btn {
+      background-color: #4b78c7;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px 8px 0 0;
+      cursor: pointer;
+    }
+
+    .form-section {
+      border: 2px solid #4b78c7;
+      border-top: none;
+      padding: 20px;
+      text-align: left;
+    }
+
+    label {
+      display: block;
+      margin: 10px 0 5px;
+      font-weight: bold;
+    }
+
+    input[type="text"], input[type="date"] {
+      padding: 8px;
+      width: 100%;
+      max-width: 300px;
+      border: 1px solid #d4aa00;
+      border-radius: 4px;
+    }
+
+    .save-btn {
+      background-color: #4b78c7;
+      color: white;
+      padding: 10px 30px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+
+    .tooltip {
+      margin-top: 10px;
+      font-size: 12px;
+      color: #555;
+      border: 1px solid #ccc;
+      display: inline-block;
+      padding: 8px;
+      background-color: #fff8dc;
+      max-width: 300px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <img class="logo" src="\18056564_1893183020894119_9109696395635491203_o.jpg" alt="DPS Logo">
+    <h2>Delhi Public School</h2>
+    <p>Nyati Estate Rd, Nyati County, Mohammed Wadi, Pune, Autadwadi Handewadi,<br>Maharashtra 411060</p>
+
+    <button class="btn-main">FILL DETAILS</button>
+
+    <div class="tab-buttons">
+      <button class="tab-btn">First Parent</button>
+      <button class="tab-btn">Second Parent</button>
+      <button class="tab-btn">Student</button>
+    </div>
+
+    <div class="form-section">
+      <label for="fname">Enter First Name *</label>
+      <input type="text" id="fname" name="fname" required>
+      <label for="lname">Enter last Name *</label>
+      <input type="text" id="lname" name="lname" required>
+
+      <label for="dob">Enter Date of Birth *</label>
+      <input type="date" id="dob" name="dob" required>
+      <label for="fname">Enter address *</label>
+      <input type="text" id="address" name="address" required>
+      <label for="phone">Enter phone number *</label>
+      <input type="text" id="number" name="number" required>
+      <label for="phone">Enter aadhar card num *</label>
+      <input type="text" id="number" name="number" required>
+
+      
+
+      <br>
+      <button class="save-btn">Save & Next</button>
+
+      <div class="tooltip">
+        Think & add the input field as per your understanding.<br>
+        Just suggesting 02, but you can add up to 06 different entries.
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
